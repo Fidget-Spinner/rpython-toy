@@ -1,0 +1,1 @@
+antlr4 -Dlanguage=Python3 -no-listener -visitor Lexer.g4 Parser.g4

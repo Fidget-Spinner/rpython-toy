@@ -1,4 +1,6 @@
 from .parser import parse
+from .compiler import compile
 
 def main(contents: str):
-    parse(contents)
+    print(compile(parse(contents)))
+    
