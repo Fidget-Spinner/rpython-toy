@@ -1,15 +1,8 @@
-from enum import Enum
 from dataclasses import dataclass
 
 from .parser.antlr4 import ParserVisitor
 from .parser.antlr4.Parser import Parser
-
-class Opcode(Enum):
-    NOP = 0
-    LOAD_NAME = 1
-    STORE_NAME = 2
-    POP_TOP = 3
-    LOAD_CONST = 4
+from .py23_common import Opcode
 
 @dataclass(frozen=True, slots=True)
 class Insn:
@@ -26,10 +19,12 @@ class CompilerVisitor(ParserVisitor.ParserVisitor):
 
     def visitStat(self, ctx: Parser.StatContext) -> list[Insn]:
         res = self.visitChildren(ctx)
+        res.append(Insn(Opcode.POP_TOP, 0))
         return res
 
     def visitAssgn(self, ctx: Parser.AssgnContext) -> list[Insn]:
         res = self.visitExpr(ctx.expr())
+        res.append(Insn(Opcode.DUP, 0))
         res.append(Insn(Opcode.STORE_NAME, f"{ctx.ID()}"))
         return res
 
