@@ -6,13 +6,13 @@ options {
 }
 
 program
-    : stat EOF
-    | func_def EOF
+    : stat* EOF
     ;
 
 stat: assgn
     | whil
     | if_els
+    | func_def
     | expr ';'
     ;
 

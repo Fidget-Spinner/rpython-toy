@@ -1,7 +1,12 @@
 class Opcode:
-    NOP = 0
-    LOAD_NAME = 1
-    STORE_NAME = 2
-    POP_TOP = 3
-    LOAD_CONST = 4
-    DUP = 5
+    NOP = u"NOP"
+    LOAD_NAME = u"LOAD_NAME"
+    STORE_NAME = u"STORE_NAME"
+    POP_TOP = u"POP_TOP"
+    PUSH_NULL = u"PUSH_NULL"
+    LOAD_CONST = u"LOAD_CONST"
+    DUP = u"DUP"
+    BINARY_OP = u"BINARY_OP"
+
+    POP_JUMP_IF_FALSE = u"POP_JUMP_IF_FALSE"
+    JUMP_BACKWARD = u"JUMP_BACKWARD"

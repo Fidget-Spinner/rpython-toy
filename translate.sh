@@ -1,0 +1,1 @@
+python translate.py --opt=jit /home/ken/Documents/GitHub/rpython-toy/toy/interpreter.py
