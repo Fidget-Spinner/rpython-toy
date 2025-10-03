@@ -7,25 +7,32 @@ import sys
 sys.path.insert(0, "/home/ken/Documents/GitHub/pypy")
 
 
-from rpython.rlib.jit import JitDriver
+from rpython.rlib.jit import JitDriver, hint, elidable
 
-jitdriver = JitDriver(greens=['pc'], reds=['self', 'stack', 'namespace']) 
+jitdriver = JitDriver(greens=['pc', 'self'], reds=['stack', 'namespace']) 
 class Interpreter:
     def __init__(self, stream):
         self.insn_stream = stream
     
+    @staticmethod
+    @elidable
+    def get_insn(insn_stream, pc):
+        return insn_stream[pc]
+
     def run(self):
         pc = 0
         stack = []
         namespace = {}
+        self = hint(self, promote=True)
         while True:
             jitdriver.jit_merge_point(self=self, pc=pc, stack=stack, namespace=namespace)           
             if pc >= len(self.insn_stream):
                 break
-            insn = self.insn_stream[pc]
+            insn = Interpreter.get_insn(self.insn_stream, pc)
             opcode = insn[0]
             oparg = insn[1]
             if opcode == Opcode.LOAD_CONST:
+                oparg = hint(oparg, promote=True)
                 stack.append(int(oparg))
             elif opcode == Opcode.LOAD_NAME:
                 stack.append(namespace[oparg])

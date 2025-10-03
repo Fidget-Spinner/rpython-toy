@@ -1,0 +1,453 @@
+[3e59e8ab9139] {jit-log-opt-loop
+# Loop 1 ((jitdriver: no get_printable_location)) : loop with 418 ops
+[p0, p1]
++1067: label(p0, p1, descr=TargetToken(139439077474784))
+debug_merge_point(0, 0, '(jitdriver: no get_printable_location)')
++1079: p3 = getfield_gc_r(ConstPtr(ptr2), descr=<FieldP interpreter.Interpreter.inst_insn_stream 8>)
++1083: i4 = arraylen_gc(p3, descr=<ArrayP 8>)
++1087: i6 = int_ge(4, i4)
++1091: guard_false(i6, descr=<Guard0x7ed1b0afa020>) [i4, p0, p1]
++1097: p8 = getarrayitem_gc_pure_r(p3, 4, descr=<ArrayP 8>)
++1101: p9 = getfield_gc_r(p8, descr=<FieldP tuple2.item0 8 pure>)
++1105: p10 = getfield_gc_r(p8, descr=<FieldP tuple2.item1 16 pure>)
++1116: i13 = call_i(ConstClass(ll_streq__rpy_unicodePtr_rpy_unicodePtr), p9, ConstPtr(ptr12), descr=<Calli 1 rr EF=0 OS=44>)
++1146: guard_false(i13, descr=<Guard0x7ed1b0afa068>) [i13, p0, p1, p10, p9]
++1162: i16 = call_i(ConstClass(ll_streq__rpy_unicodePtr_rpy_unicodePtr), p9, ConstPtr(ptr15), descr=<Calli 1 rr EF=0 OS=44>)
++1192: guard_true(i16, descr=<Guard0x7ed1b0afa0b0>) [i16, p0, p1, p10, p9]
++1201: guard_nonnull(p10, descr=<Guard0x7ed1b0afc020>) [i16, p0, p1, p10, p9]
++1210: i17 = unicodehash(p10)
++1214: i19 = cond_call_value_i(i17, ConstClass(_ll_strhash__rpy_unicodePtr), p10, descr=<Calli 8 r EF=2>)
++1223: i22 = call_i(ConstClass(ll_call_lookup_function_trampoline__v66___simple_call__function_ll), p1, p10, i19, 0, descr=<Calli 8 rrii EF=5 OS=4>)
++1331: guard_no_exception(descr=<Guard0x7ed1b0afa0f8>) [i22, p0, p1]
++1345: i24 = int_ge(i22, 0)
++1349: guard_true(i24, descr=<Guard0x7ed1b0afc050>) [i22, p0, p1]
++1355: p25 = getfield_gc_r(p1, descr=<FieldP dicttable.entries 48>)
++1370: i26 = getinteriorfield_gc_i(p25, i22, descr=<InteriorFieldDescr <FieldS odictentry.value 8>>)
++1375: i27 = getfield_gc_i(p0, descr=<FieldS list.length 8>)
++1386: i29 = int_add(i27, 1)
++1390: p30 = getfield_gc_r(p0, descr=<FieldP list.items 16>)
++1394: i31 = arraylen_gc(p30, descr=<ArrayS 8>)
++1398: i32 = int_lt(i31, i29)
++1401: cond_call(i32, ConstClass(_ll_list_resize_hint_really_look_inside_iff__listPtr_Signed_Bool), p0, i29, 1, descr=<Callv 0 rii EF=5>)
++1407: guard_no_exception(descr=<Guard0x7ed1b0afa140>) [i26, i27, p0, p1, i29]
++1407: p35 = getfield_gc_r(p0, descr=<FieldP list.items 16>)
++1411: setarrayitem_gc(p35, i27, i26, descr=<ArrayS 8>)
+debug_merge_point(0, 0, '(jitdriver: no get_printable_location)')
++1416: setfield_gc(p0, i29, descr=<FieldS list.length 8>)
++1420: i37 = int_ge(5, i4)
++1424: guard_false(i37, descr=<Guard0x7ed1b0afa188>) [i4, p0, p1]
++1430: p39 = getarrayitem_gc_pure_r(p3, 5, descr=<ArrayP 8>)
++1441: p40 = getfield_gc_r(p39, descr=<FieldP tuple2.item0 8 pure>)
++1445: p41 = getfield_gc_r(p39, descr=<FieldP tuple2.item1 16 pure>)
++1449: i44 = call_i(ConstClass(ll_streq__rpy_unicodePtr_rpy_unicodePtr), p40, ConstPtr(ptr43), descr=<Calli 1 rr EF=0 OS=44>)
++1501: guard_true(i44, descr=<Guard0x7ed1b0afa1d0>) [i44, p0, p1, p41, p40]
++1510: i47 = call_i(ConstClass(ll_int__rpy_unicodePtr_Signed), p41, 10, descr=<Calli 8 ri EF=4>)
++1535: guard_no_exception(descr=<Guard0x7ed1b0afa218>) [i47, p0, p1]
++1555: i49 = int_add(i27, 2)
++1559: i50 = arraylen_gc(p35, descr=<ArrayS 8>)
++1570: i51 = int_lt(i50, i49)
++1573: cond_call(i51, ConstClass(_ll_list_resize_hint_really_look_inside_iff__listPtr_Signed_Bool), p0, i49, 1, descr=<Callv 0 rii EF=5>)
++1579: guard_no_exception(descr=<Guard0x7ed1b0afa260>) [i47, i29, p0, p1, i49]
++1579: p54 = getfield_gc_r(p0, descr=<FieldP list.items 16>)
++1583: setarrayitem_gc(p54, i29, i47, descr=<ArrayS 8>)
+debug_merge_point(0, 0, '(jitdriver: no get_printable_location)')
++1588: setfield_gc(p0, i49, descr=<FieldS list.length 8>)
++1592: i56 = int_ge(6, i4)
++1596: guard_false(i56, descr=<Guard0x7ed1b0afa2a8>) [i4, p0, p1]
++1602: p58 = getarrayitem_gc_pure_r(p3, 6, descr=<ArrayP 8>)
++1613: p59 = getfield_gc_r(p58, descr=<FieldP tuple2.item0 8 pure>)
++1617: p60 = getfield_gc_r(p58, descr=<FieldP tuple2.item1 16 pure>)
++1621: i63 = call_i(ConstClass(ll_streq__rpy_unicodePtr_rpy_unicodePtr), p59, ConstPtr(ptr62), descr=<Calli 1 rr EF=0 OS=44>)
++1687: guard_false(i63, descr=<Guard0x7ed1b0afa2f0>) [i63, p0, p1, p60, p59]
++1696: i66 = call_i(ConstClass(ll_streq__rpy_unicodePtr_rpy_unicodePtr), p59, ConstPtr(ptr65), descr=<Calli 1 rr EF=0 OS=44>)
++1727: guard_false(i66, descr=<Guard0x7ed1b0afa338>) [i66, p0, p1, p60, p59]
++1743: i69 = call_i(ConstClass(ll_streq__rpy_unicodePtr_rpy_unicodePtr), p59, ConstPtr(ptr68), descr=<Calli 1 rr EF=0 OS=44>)
++1777: guard_true(i69, descr=<Guard0x7ed1b0afa380>) [i69, p0, p1, p60, p59]
++1786: i70 = getarrayitem_gc_i(p54, i27, descr=<ArrayS 8>)
++1798: i73 = call_i(ConstClass(_ll_2_str_eq_checknull_char__rpy_unicodePtr_UniChar), p60, 60, descr=<Calli 8 ri EF=0 OS=50>)
++1830: guard_true(i73, descr=<Guard0x7ed1b0afa3c8>) [i73, i70, i47, p0, p1, p60]
++1839: i74 = int_lt(i70, i47)
++1853: guard_true(i74, descr=<Guard0x7ed1b0afc080>) [i73, i70, i47, p0, p1, p60]
++1859: i76 = int_add(i27, 3)
++1863: i77 = arraylen_gc(p54, descr=<ArrayS 8>)
++1874: i78 = int_lt(i77, i76)
++1877: cond_call(i78, ConstClass(_ll_list_resize_hint_really_look_inside_iff__listPtr_Signed_Bool), p0, i76, 1, descr=<Callv 0 rii EF=5>)
++1883: guard_no_exception(descr=<Guard0x7ed1b0afa410>) [i49, p0, p1, i76]
++1883: p81 = getfield_gc_r(p0, descr=<FieldP list.items 16>)
++1887: setarrayitem_gc(p81, i49, 1, descr=<ArrayS 8>)
+debug_merge_point(0, 0, '(jitdriver: no get_printable_location)')
++1903: setfield_gc(p0, i76, descr=<FieldS list.length 8>)
++1907: i84 = int_ge(7, i4)
++1911: guard_false(i84, descr=<Guard0x7ed1b0afa458>) [i4, p0, p1]
++1917: p86 = getarrayitem_gc_pure_r(p3, 7, descr=<ArrayP 8>)
++1921: p87 = getfield_gc_r(p86, descr=<FieldP tuple2.item0 8 pure>)
++1925: p88 = getfield_gc_r(p86, descr=<FieldP tuple2.item1 16 pure>)
++1929: i91 = call_i(ConstClass(ll_streq__rpy_unicodePtr_rpy_unicodePtr), p87, ConstPtr(ptr90), descr=<Calli 1 rr EF=0 OS=44>)
++1991: guard_false(i91, descr=<Guard0x7ed1b0afa4a0>) [i91, p0, p1, p88, p87]
++2000: i94 = call_i(ConstClass(ll_streq__rpy_unicodePtr_rpy_unicodePtr), p87, ConstPtr(ptr93), descr=<Calli 1 rr EF=0 OS=44>)
++2031: guard_false(i94, descr=<Guard0x7ed1b0afa4e8>) [i94, p0, p1, p88, p87]
++2040: i97 = call_i(ConstClass(ll_streq__rpy_unicodePtr_rpy_unicodePtr), p87, ConstPtr(ptr96), descr=<Calli 1 rr EF=0 OS=44>)
++2071: guard_false(i97, descr=<Guard0x7ed1b0afa530>) [i97, p0, p1, p88, p87]
++2087: i100 = call_i(ConstClass(ll_streq__rpy_unicodePtr_rpy_unicodePtr), p87, ConstPtr(ptr99), descr=<Calli 1 rr EF=0 OS=44>)
++2121: guard_false(i100, descr=<Guard0x7ed1b0afa578>) [i100, p0, p1, p88, p87]
++2137: i103 = call_i(ConstClass(ll_streq__rpy_unicodePtr_rpy_unicodePtr), p87, ConstPtr(ptr102), descr=<Calli 1 rr EF=0 OS=44>)
++2171: guard_false(i103, descr=<Guard0x7ed1b0afa5c0>) [i103, p0, p1, p88, p87]
++2187: i106 = call_i(ConstClass(ll_streq__rpy_unicodePtr_rpy_unicodePtr), p87, ConstPtr(ptr105), descr=<Calli 1 rr EF=0 OS=44>)
++2221: guard_false(i106, descr=<Guard0x7ed1b0afa608>) [i106, p0, p1, p88, p87]
++2237: i109 = call_i(ConstClass(ll_streq__rpy_unicodePtr_rpy_unicodePtr), p87, ConstPtr(ptr108), descr=<Calli 1 rr EF=0 OS=44>)
++2271: guard_true(i109, descr=<Guard0x7ed1b0afa650>) [i109, p0, p1, p88, p87]
++2280: i110 = arraylen_gc(p81, descr=<ArrayS 8>)
++2291: i112 = int_rshift(i110, 1)
++2294: i114 = int_sub(i112, 5)
++2298: i115 = int_lt(i49, i114)
++2305: cond_call(i115, ConstClass(_ll_list_resize_hint_really_look_inside_iff__listPtr_Signed_Bool), p0, i49, 0, descr=<Callv 0 rii EF=5>)
++2311: guard_no_exception(descr=<Guard0x7ed1b0afa698>) [p0, p1, p88, i49]
+debug_merge_point(0, 0, '(jitdriver: no get_printable_location)')
++2311: setfield_gc(p0, i49, descr=<FieldS list.length 8>)
++2322: i119 = int_ge(8, i4)
++2326: guard_false(i119, descr=<Guard0x7ed1b0afa6e0>) [i4, p0, p1]
++2332: p121 = getarrayitem_gc_pure_r(p3, 8, descr=<ArrayP 8>)
++2336: p122 = getfield_gc_r(p121, descr=<FieldP tuple2.item0 8 pure>)
++2340: p123 = getfield_gc_r(p121, descr=<FieldP tuple2.item1 16 pure>)
++2344: i126 = call_i(ConstClass(ll_streq__rpy_unicodePtr_rpy_unicodePtr), p122, ConstPtr(ptr125), descr=<Calli 1 rr EF=0 OS=44>)
++2392: guard_false(i126, descr=<Guard0x7ed1b0afa728>) [i126, p0, p1, p123, p122]
++2401: i129 = call_i(ConstClass(ll_streq__rpy_unicodePtr_rpy_unicodePtr), p122, ConstPtr(ptr128), descr=<Calli 1 rr EF=0 OS=44>)
++2432: guard_true(i129, descr=<Guard0x7ed1b0afa770>) [i129, p0, p1, p123, p122]
++2441: guard_nonnull(p123, descr=<Guard0x7ed1b0afc0b0>) [i129, p0, p1, p123, p122]
++2455: i130 = unicodehash(p123)
++2466: i132 = cond_call_value_i(i130, ConstClass(_ll_strhash__rpy_unicodePtr), p123, descr=<Calli 8 r EF=2>)
++2475: i135 = call_i(ConstClass(ll_call_lookup_function_trampoline__v66___simple_call__function_ll), p1, p123, i132, 0, descr=<Calli 8 rrii EF=5 OS=4>)
++2562: guard_no_exception(descr=<Guard0x7ed1b0afa7b8>) [i135, p0, p1]
++2576: i137 = int_ge(i135, 0)
++2580: guard_true(i137, descr=<Guard0x7ed1b0afc0e0>) [i135, p0, p1]
++2590: i138 = getinteriorfield_gc_i(p25, i135, descr=<InteriorFieldDescr <FieldS odictentry.value 8>>)
++2602: p139 = getfield_gc_r(p0, descr=<FieldP list.items 16>)
++2613: i140 = arraylen_gc(p139, descr=<ArrayS 8>)
++2617: i141 = int_lt(i140, i76)
++2624: cond_call(i141, ConstClass(_ll_list_resize_hint_really_look_inside_iff__listPtr_Signed_Bool), p0, i76, 1, descr=<Callv 0 rii EF=5>)
++2630: guard_no_exception(descr=<Guard0x7ed1b0afa800>) [i138, i49, p0, p1, i76]
++2630: p144 = getfield_gc_r(p0, descr=<FieldP list.items 16>)
++2634: setarrayitem_gc(p144, i49, i138, descr=<ArrayS 8>)
+debug_merge_point(0, 0, '(jitdriver: no get_printable_location)')
++2646: setfield_gc(p0, i76, descr=<FieldS list.length 8>)
++2657: i146 = int_ge(9, i4)
++2661: guard_false(i146, descr=<Guard0x7ed1b0afa848>) [i4, p0, p1]
++2667: p148 = getarrayitem_gc_pure_r(p3, 9, descr=<ArrayP 8>)
++2678: p149 = getfield_gc_r(p148, descr=<FieldP tuple2.item0 8 pure>)
++2682: p150 = getfield_gc_r(p148, descr=<FieldP tuple2.item1 16 pure>)
++2686: i153 = call_i(ConstClass(ll_streq__rpy_unicodePtr_rpy_unicodePtr), p149, ConstPtr(ptr152), descr=<Calli 1 rr EF=0 OS=44>)
++2731: guard_true(i153, descr=<Guard0x7ed1b0afa890>) [i153, p0, p1, p150, p149]
++2740: i156 = call_i(ConstClass(ll_int__rpy_unicodePtr_Signed), p150, 10, descr=<Calli 8 ri EF=4>)
++2765: guard_no_exception(descr=<Guard0x7ed1b0afa8d8>) [i156, p0, p1]
++2785: i158 = int_add(i27, 4)
++2789: i159 = arraylen_gc(p144, descr=<ArrayS 8>)
++2793: i160 = int_lt(i159, i158)
++2796: cond_call(i160, ConstClass(_ll_list_resize_hint_really_look_inside_iff__listPtr_Signed_Bool), p0, i158, 1, descr=<Callv 0 rii EF=5>)
++2802: guard_no_exception(descr=<Guard0x7ed1b0afa920>) [i156, i76, p0, p1, i158]
++2802: p163 = getfield_gc_r(p0, descr=<FieldP list.items 16>)
++2806: setarrayitem_gc(p163, i76, i156, descr=<ArrayS 8>)
+debug_merge_point(0, 0, '(jitdriver: no get_printable_location)')
++2818: setfield_gc(p0, i158, descr=<FieldS list.length 8>)
++2822: i165 = int_ge(10, i4)
++2826: guard_false(i165, descr=<Guard0x7ed1b0afa968>) [i4, p0, p1]
++2832: p167 = getarrayitem_gc_pure_r(p3, 10, descr=<ArrayP 8>)
++2843: p168 = getfield_gc_r(p167, descr=<FieldP tuple2.item0 8 pure>)
++2847: p169 = getfield_gc_r(p167, descr=<FieldP tuple2.item1 16 pure>)
++2851: i172 = call_i(ConstClass(ll_streq__rpy_unicodePtr_rpy_unicodePtr), p168, ConstPtr(ptr171), descr=<Calli 1 rr EF=0 OS=44>)
++2914: guard_false(i172, descr=<Guard0x7ed1b0afa9b0>) [i172, p0, p1, p169, p168]
++2923: i175 = call_i(ConstClass(ll_streq__rpy_unicodePtr_rpy_unicodePtr), p168, ConstPtr(ptr174), descr=<Calli 1 rr EF=0 OS=44>)
++2954: guard_false(i175, descr=<Guard0x7ed1b0afa9f8>) [i175, p0, p1, p169, p168]
++2963: i178 = call_i(ConstClass(ll_streq__rpy_unicodePtr_rpy_unicodePtr), p168, ConstPtr(ptr177), descr=<Calli 1 rr EF=0 OS=44>)
++2994: guard_true(i178, descr=<Guard0x7ed1b0afaa40>) [i178, p0, p1, p169, p168]
++3003: i179 = getarrayitem_gc_i(p163, i49, descr=<ArrayS 8>)
++3015: i182 = call_i(ConstClass(_ll_2_str_eq_checknull_char__rpy_unicodePtr_UniChar), p169, 60, descr=<Calli 8 ri EF=0 OS=50>)
++3043: guard_false(i182, descr=<Guard0x7ed1b0afaa88>) [i182, i179, i156, p0, p1, p169]
++3052: i185 = call_i(ConstClass(_ll_2_str_eq_checknull_char__rpy_unicodePtr_UniChar), p169, 43, descr=<Calli 8 ri EF=0 OS=50>)
++3077: guard_true(i185, descr=<Guard0x7ed1b0afaad0>) [i185, i179, i156, p0, p1]
++3086: i186 = int_add(i179, i156)
++3093: i188 = int_add(i27, 5)
++3097: i189 = arraylen_gc(p163, descr=<ArrayS 8>)
++3108: i190 = int_lt(i189, i188)
++3111: cond_call(i190, ConstClass(_ll_list_resize_hint_really_look_inside_iff__listPtr_Signed_Bool), p0, i188, 1, descr=<Callv 0 rii EF=5>)
++3117: guard_no_exception(descr=<Guard0x7ed1b0afab18>) [i186, i158, p0, p1, i188]
++3117: p193 = getfield_gc_r(p0, descr=<FieldP list.items 16>)
++3121: setarrayitem_gc(p193, i158, i186, descr=<ArrayS 8>)
+debug_merge_point(0, 0, '(jitdriver: no get_printable_location)')
++3133: setfield_gc(p0, i188, descr=<FieldS list.length 8>)
++3137: i195 = int_ge(11, i4)
++3141: guard_false(i195, descr=<Guard0x7ed1b0afab60>) [i4, p0, p1]
++3147: p197 = getarrayitem_gc_pure_r(p3, 11, descr=<ArrayP 8>)
++3151: p198 = getfield_gc_r(p197, descr=<FieldP tuple2.item0 8 pure>)
++3155: p199 = getfield_gc_r(p197, descr=<FieldP tuple2.item1 16 pure>)
++3159: i202 = call_i(ConstClass(ll_streq__rpy_unicodePtr_rpy_unicodePtr), p198, ConstPtr(ptr201), descr=<Calli 1 rr EF=0 OS=44>)
++3221: guard_false(i202, descr=<Guard0x7ed1b0afaba8>) [i202, p0, p1, p199, p198]
++3230: i205 = call_i(ConstClass(ll_streq__rpy_unicodePtr_rpy_unicodePtr), p198, ConstPtr(ptr204), descr=<Calli 1 rr EF=0 OS=44>)
++3261: guard_false(i205, descr=<Guard0x7ed1b0afabf0>) [i205, p0, p1, p199, p198]
++3270: i208 = call_i(ConstClass(ll_streq__rpy_unicodePtr_rpy_unicodePtr), p198, ConstPtr(ptr207), descr=<Calli 1 rr EF=0 OS=44>)
++3301: guard_false(i208, descr=<Guard0x7ed1b0afac38>) [i208, p0, p1, p199, p198]
++3310: i211 = call_i(ConstClass(ll_streq__rpy_unicodePtr_rpy_unicodePtr), p198, ConstPtr(ptr210), descr=<Calli 1 rr EF=0 OS=44>)
++3341: guard_false(i211, descr=<Guard0x7ed1b0afac80>) [i211, p0, p1, p199, p198]
++3350: i214 = call_i(ConstClass(ll_streq__rpy_unicodePtr_rpy_unicodePtr), p198, ConstPtr(ptr213), descr=<Calli 1 rr EF=0 OS=44>)
++3381: guard_true(i214, descr=<Guard0x7ed1b0afacc8>) [i214, p0, p1, p199, p198]
++3390: i216 = int_add(i27, 6)
++3394: i217 = arraylen_gc(p193, descr=<ArrayS 8>)
++3405: i218 = int_lt(i217, i216)
++3408: cond_call(i218, ConstClass(_ll_list_resize_hint_really_look_inside_iff__listPtr_Signed_Bool), p0, i216, 1, descr=<Callv 0 rii EF=5>)
++3414: guard_no_exception(descr=<Guard0x7ed1b0afad10>) [i186, i188, p0, p1, i216]
++3414: p221 = getfield_gc_r(p0, descr=<FieldP list.items 16>)
++3418: setarrayitem_gc(p221, i188, i186, descr=<ArrayS 8>)
+debug_merge_point(0, 0, '(jitdriver: no get_printable_location)')
++3430: setfield_gc(p0, i216, descr=<FieldS list.length 8>)
++3434: i223 = int_ge(12, i4)
++3438: guard_false(i223, descr=<Guard0x7ed1b0afad58>) [i4, p0, p1]
++3444: p225 = getarrayitem_gc_pure_r(p3, 12, descr=<ArrayP 8>)
++3448: p226 = getfield_gc_r(p225, descr=<FieldP tuple2.item0 8 pure>)
++3452: p227 = getfield_gc_r(p225, descr=<FieldP tuple2.item1 16 pure>)
++3456: i230 = call_i(ConstClass(ll_streq__rpy_unicodePtr_rpy_unicodePtr), p226, ConstPtr(ptr229), descr=<Calli 1 rr EF=0 OS=44>)
++3511: guard_false(i230, descr=<Guard0x7ed1b0afada0>) [i230, p0, p1, p227, p226]
++3520: i233 = call_i(ConstClass(ll_streq__rpy_unicodePtr_rpy_unicodePtr), p226, ConstPtr(ptr232), descr=<Calli 1 rr EF=0 OS=44>)
++3551: guard_false(i233, descr=<Guard0x7ed1b0afade8>) [i233, p0, p1, p227, p226]
++3560: i236 = call_i(ConstClass(ll_streq__rpy_unicodePtr_rpy_unicodePtr), p226, ConstPtr(ptr235), descr=<Calli 1 rr EF=0 OS=44>)
++3591: guard_false(i236, descr=<Guard0x7ed1b0afae30>) [i236, p0, p1, p227, p226]
++3600: i239 = call_i(ConstClass(ll_streq__rpy_unicodePtr_rpy_unicodePtr), p226, ConstPtr(ptr238), descr=<Calli 1 rr EF=0 OS=44>)
++3631: guard_true(i239, descr=<Guard0x7ed1b0afae78>) [i239, p0, p1, p227, p226]
++3640: guard_nonnull(p227, descr=<Guard0x7ed1b0afc110>) [i239, p0, p1, p227, p226]
++3654: i240 = unicodehash(p227)
++3665: i242 = cond_call_value_i(i240, ConstClass(_ll_strhash__rpy_unicodePtr), p227, descr=<Calli 8 r EF=2>)
++3674: i245 = call_i(ConstClass(ll_call_lookup_function_trampoline__v66___simple_call__function_ll), p1, p227, i242, 1, descr=<Calli 8 rrii EF=5 OS=4>)
++3758: guard_no_exception(descr=<Guard0x7ed1b0afaec0>) [i245, i242, i186, p0, p1, p227]
++3772: call_n(ConstClass(_ll_dict_setitem_lookup_done_trampoline__v84___simple_call__function__l), p1, p227, i186, i242, i245, descr=<Callv 0 rriii EF=5>)
++3861: guard_no_exception(descr=<Guard0x7ed1b0afaf08>) [p0, p1]
++3875: i247 = arraylen_gc(p221, descr=<ArrayS 8>)
++3886: i249 = int_rshift(i247, 1)
++3889: i251 = int_sub(i249, 5)
++3893: i252 = int_lt(i188, i251)
++3900: cond_call(i252, ConstClass(_ll_list_resize_hint_really_look_inside_iff__listPtr_Signed_Bool), p0, i188, 0, descr=<Callv 0 rii EF=5>)
++3906: guard_no_exception(descr=<Guard0x7ed1b0afaf50>) [p0, p1, i188]
+debug_merge_point(0, 0, '(jitdriver: no get_printable_location)')
++3906: setfield_gc(p0, i188, descr=<FieldS list.length 8>)
++3924: i256 = int_ge(13, i4)
++3928: guard_false(i256, descr=<Guard0x7ed1b0afaf98>) [i4, p0, p1]
++3934: p258 = getarrayitem_gc_pure_r(p3, 13, descr=<ArrayP 8>)
++3945: p259 = getfield_gc_r(p258, descr=<FieldP tuple2.item0 8 pure>)
++3949: p260 = getfield_gc_r(p258, descr=<FieldP tuple2.item1 16 pure>)
++3953: i263 = call_i(ConstClass(ll_streq__rpy_unicodePtr_rpy_unicodePtr), p259, ConstPtr(ptr262), descr=<Calli 1 rr EF=0 OS=44>)
++3984: guard_false(i263, descr=<Guard0x7ed1b0afafe0>) [i263, p0, p1, p260, p259]
++3993: i266 = call_i(ConstClass(ll_streq__rpy_unicodePtr_rpy_unicodePtr), p259, ConstPtr(ptr265), descr=<Calli 1 rr EF=0 OS=44>)
++4020: guard_false(i266, descr=<Guard0x7ed1b0afb028>) [i266, p0, p1, p260, p259]
++4029: i269 = call_i(ConstClass(ll_streq__rpy_unicodePtr_rpy_unicodePtr), p259, ConstPtr(ptr268), descr=<Calli 1 rr EF=0 OS=44>)
++4056: guard_false(i269, descr=<Guard0x7ed1b0afb070>) [i269, p0, p1, p260, p259]
++4065: i272 = call_i(ConstClass(ll_streq__rpy_unicodePtr_rpy_unicodePtr), p259, ConstPtr(ptr271), descr=<Calli 1 rr EF=0 OS=44>)
++4092: guard_false(i272, descr=<Guard0x7ed1b0afb0b8>) [i272, p0, p1, p260, p259]
++4101: i275 = call_i(ConstClass(ll_streq__rpy_unicodePtr_rpy_unicodePtr), p259, ConstPtr(ptr274), descr=<Calli 1 rr EF=0 OS=44>)
++4128: guard_false(i275, descr=<Guard0x7ed1b0afb100>) [i275, p0, p1, p260, p259]
++4137: i278 = call_i(ConstClass(ll_streq__rpy_unicodePtr_rpy_unicodePtr), p259, ConstPtr(ptr277), descr=<Calli 1 rr EF=0 OS=44>)
++4164: guard_true(i278, descr=<Guard0x7ed1b0afb148>) [i278, p0, p1, p260, p259]
++4173: i280 = int_sub(i27, -4)
++4177: p281 = getfield_gc_r(p0, descr=<FieldP list.items 16>)
++4181: i282 = getarrayitem_gc_i(p281, i280, descr=<ArrayS 8>)
++4181: i283 = arraylen_gc(p281, descr=<ArrayS 8>)
++4185: i285 = int_rshift(i283, 1)
++4188: i287 = int_sub(i285, 5)
++4192: i288 = int_lt(i280, i287)
++4195: cond_call(i288, ConstClass(_ll_list_resize_hint_really_look_inside_iff__listPtr_Signed_Bool), p0, i280, 0, descr=<Callv 0 rii EF=5>)
++4201: guard_no_exception(descr=<Guard0x7ed1b0afb190>) [p0, p1, i280]
+debug_merge_point(0, 0, '(jitdriver: no get_printable_location)')
++4201: setfield_gc(p0, i280, descr=<FieldS list.length 8>)
++4205: i292 = int_ge(14, i4)
++4209: guard_false(i292, descr=<Guard0x7ed1b0afb1d8>) [i4, p0, p1]
++4215: p294 = getarrayitem_gc_pure_r(p3, 14, descr=<ArrayP 8>)
++4229: p295 = getfield_gc_r(p294, descr=<FieldP tuple2.item0 8 pure>)
++4234: p296 = getfield_gc_r(p294, descr=<FieldP tuple2.item1 16 pure>)
++4239: i299 = call_i(ConstClass(ll_streq__rpy_unicodePtr_rpy_unicodePtr), p295, ConstPtr(ptr298), descr=<Calli 1 rr EF=0 OS=44>)
++4280: guard_false(i299, descr=<Guard0x7ed1b0afb220>) [i299, p0, p1, p296, p295]
++4289: i302 = call_i(ConstClass(ll_streq__rpy_unicodePtr_rpy_unicodePtr), p295, ConstPtr(ptr301), descr=<Calli 1 rr EF=0 OS=44>)
++4320: guard_false(i302, descr=<Guard0x7ed1b0afb268>) [i302, p0, p1, p296, p295]
++4329: i305 = call_i(ConstClass(ll_streq__rpy_unicodePtr_rpy_unicodePtr), p295, ConstPtr(ptr304), descr=<Calli 1 rr EF=0 OS=44>)
++4360: guard_false(i305, descr=<Guard0x7ed1b0afb2b0>) [i305, p0, p1, p296, p295]
++4369: i308 = call_i(ConstClass(ll_streq__rpy_unicodePtr_rpy_unicodePtr), p295, ConstPtr(ptr307), descr=<Calli 1 rr EF=0 OS=44>)
++4400: guard_false(i308, descr=<Guard0x7ed1b0afb2f8>) [i308, p0, p1, p296, p295]
++4409: i311 = call_i(ConstClass(ll_streq__rpy_unicodePtr_rpy_unicodePtr), p295, ConstPtr(ptr310), descr=<Calli 1 rr EF=0 OS=44>)
++4440: guard_false(i311, descr=<Guard0x7ed1b0afb340>) [i311, p0, p1, p296, p295]
++4449: i314 = call_i(ConstClass(ll_streq__rpy_unicodePtr_rpy_unicodePtr), p295, ConstPtr(ptr313), descr=<Calli 1 rr EF=0 OS=44>)
++4480: guard_false(i314, descr=<Guard0x7ed1b0afb388>) [i314, p0, p1, p296, p295]
++4489: i317 = call_i(ConstClass(ll_streq__rpy_unicodePtr_rpy_unicodePtr), p295, ConstPtr(ptr316), descr=<Calli 1 rr EF=0 OS=44>)
++4520: guard_false(i317, descr=<Guard0x7ed1b0afb3d0>) [i317, p0, p1, p296, p295]
++4536: i320 = call_i(ConstClass(ll_streq__rpy_unicodePtr_rpy_unicodePtr), p295, ConstPtr(ptr319), descr=<Calli 1 rr EF=0 OS=44>)
++4563: guard_false(i320, descr=<Guard0x7ed1b0afb418>) [i320, p0, p1, p296, p295]
++4579: i323 = call_i(ConstClass(ll_streq__rpy_unicodePtr_rpy_unicodePtr), p295, ConstPtr(ptr322), descr=<Calli 1 rr EF=0 OS=44>)
++4606: guard_true(i323, descr=<Guard0x7ed1b0afb460>) [i323, p0, p1, p296]
++4615: i326 = call_i(ConstClass(ll_int__rpy_unicodePtr_Signed), p296, 10, descr=<Calli 8 ri EF=4>)
++4640: guard_no_exception(descr=<Guard0x7ed1b0afb4a8>) [i326, p0, p1]
++4660: i328 = int_sub(14, i326)
++4660: i330 = int_sub(15, i326)
++4668: guard_value(i330, 4, descr=<Guard0x7ed1b0afc140>) [i326, p0, p1]
+debug_merge_point(0, 0, '(jitdriver: no get_printable_location)')
++4678: label(p0, p1, p8, p9, p10, i280, p39, p40, p41, p58, p59, p60, p86, p87, p88, p121, p122, p123, p148, p149, p150, p167, p168, p169, p197, p198, p225, p226, p227, p258, p259, p294, p295, p296, descr=TargetToken(139439077474848))
+debug_merge_point(0, 0, '(jitdriver: no get_printable_location)')
++4704: i332 = unicodehash(p10)
++4716: i334 = cond_call_value_i(i332, ConstClass(_ll_strhash__rpy_unicodePtr), p10, descr=<Calli 8 r EF=2>)
++4725: i337 = call_i(ConstClass(ll_call_lookup_function_trampoline__v66___simple_call__function_ll), p1, p10, i334, 0, descr=<Calli 8 rrii EF=5 OS=4>)
++4812: guard_no_exception(descr=<Guard0x7ed1b0afb4f0>) [i337, p0, p1]
++4826: i339 = int_ge(i337, 0)
++4830: guard_true(i339, descr=<Guard0x7ed1b0afc170>) [i337, p0, p1]
++4836: p340 = getfield_gc_r(p1, descr=<FieldP dicttable.entries 48>)
++4851: i341 = getinteriorfield_gc_i(p340, i337, descr=<InteriorFieldDescr <FieldS odictentry.value 8>>)
++4856: i343 = int_add(i280, 1)
++4860: p344 = getfield_gc_r(p0, descr=<FieldP list.items 16>)
++4871: i345 = arraylen_gc(p344, descr=<ArrayS 8>)
++4875: i346 = int_lt(i345, i343)
++4878: cond_call(i346, ConstClass(_ll_list_resize_hint_really_look_inside_iff__listPtr_Signed_Bool), p0, i343, 1, descr=<Callv 0 rii EF=5>)
++4884: guard_no_exception(descr=<Guard0x7ed1b0afb538>) [i341, i280, p0, p1, i343]
++4884: p349 = getfield_gc_r(p0, descr=<FieldP list.items 16>)
++4888: setarrayitem_gc(p349, i280, i341, descr=<ArrayS 8>)
+debug_merge_point(0, 0, '(jitdriver: no get_printable_location)')
++4893: i352 = call_i(ConstClass(ll_int__rpy_unicodePtr_Signed), p41, 10, descr=<Calli 8 ri EF=4>)
++4915: setfield_gc(p0, i343, descr=<FieldS list.length 8>)
++4919: guard_no_exception(descr=<Guard0x7ed1b0afb580>) [i352, p0, p1]
++4939: i354 = int_add(i280, 2)
++4943: i355 = arraylen_gc(p349, descr=<ArrayS 8>)
++4947: i356 = int_lt(i355, i354)
++4950: cond_call(i356, ConstClass(_ll_list_resize_hint_really_look_inside_iff__listPtr_Signed_Bool), p0, i354, 1, descr=<Callv 0 rii EF=5>)
++4956: guard_no_exception(descr=<Guard0x7ed1b0afb5c8>) [i352, i343, p0, p1, i354]
++4956: p359 = getfield_gc_r(p0, descr=<FieldP list.items 16>)
++4960: setarrayitem_gc(p359, i343, i352, descr=<ArrayS 8>)
+debug_merge_point(0, 0, '(jitdriver: no get_printable_location)')
++4965: i360 = getarrayitem_gc_i(p359, i280, descr=<ArrayS 8>)
++4970: i363 = call_i(ConstClass(_ll_2_str_eq_checknull_char__rpy_unicodePtr_UniChar), p60, 60, descr=<Calli 8 ri EF=0 OS=50>)
++5012: setfield_gc(p0, i354, descr=<FieldS list.length 8>)
++5016: guard_true(i363, descr=<Guard0x7ed1b0afb610>) [i363, i360, i352, p0, p1, p60]
++5025: i364 = int_lt(i360, i352)
++5032: guard_true(i364, descr=<Guard0x7ed1b0afc1a0>) [i363, i360, i352, p0, p1, p60]
++5038: i366 = int_add(i280, 3)
++5042: i367 = arraylen_gc(p359, descr=<ArrayS 8>)
++5053: i368 = int_lt(i367, i366)
++5056: cond_call(i368, ConstClass(_ll_list_resize_hint_really_look_inside_iff__listPtr_Signed_Bool), p0, i366, 1, descr=<Callv 0 rii EF=5>)
++5062: guard_no_exception(descr=<Guard0x7ed1b0afb658>) [i354, p0, p1, i366]
++5062: p371 = getfield_gc_r(p0, descr=<FieldP list.items 16>)
++5066: setarrayitem_gc(p371, i354, 1, descr=<ArrayS 8>)
+debug_merge_point(0, 0, '(jitdriver: no get_printable_location)')
++5075: i373 = arraylen_gc(p371, descr=<ArrayS 8>)
++5079: i375 = int_rshift(i373, 1)
++5082: i377 = int_sub(i375, 5)
++5086: setfield_gc(p0, i366, descr=<FieldS list.length 8>)
++5090: i378 = int_lt(i354, i377)
++5093: cond_call(i378, ConstClass(_ll_list_resize_hint_really_look_inside_iff__listPtr_Signed_Bool), p0, i354, 0, descr=<Callv 0 rii EF=5>)
++5099: guard_no_exception(descr=<Guard0x7ed1b0afb6a0>) [p0, p1, p88, i354]
+debug_merge_point(0, 0, '(jitdriver: no get_printable_location)')
++5099: i381 = unicodehash(p123)
++5110: i383 = cond_call_value_i(i381, ConstClass(_ll_strhash__rpy_unicodePtr), p123, descr=<Calli 8 r EF=2>)
++5119: i386 = call_i(ConstClass(ll_call_lookup_function_trampoline__v66___simple_call__function_ll), p1, p123, i383, 0, descr=<Calli 8 rrii EF=5 OS=4>)
++5206: setfield_gc(p0, i354, descr=<FieldS list.length 8>)
++5217: guard_no_exception(descr=<Guard0x7ed1b0afb6e8>) [i386, p0, p1]
++5231: i388 = int_ge(i386, 0)
++5235: guard_true(i388, descr=<Guard0x7ed1b0afc1d0>) [i386, p0, p1]
++5245: i389 = getinteriorfield_gc_i(p340, i386, descr=<InteriorFieldDescr <FieldS odictentry.value 8>>)
++5257: p390 = getfield_gc_r(p0, descr=<FieldP list.items 16>)
++5261: i391 = arraylen_gc(p390, descr=<ArrayS 8>)
++5265: i392 = int_lt(i391, i366)
++5268: cond_call(i392, ConstClass(_ll_list_resize_hint_really_look_inside_iff__listPtr_Signed_Bool), p0, i366, 1, descr=<Callv 0 rii EF=5>)
++5274: guard_no_exception(descr=<Guard0x7ed1b0afb730>) [i389, i354, p0, p1, i366]
++5274: p395 = getfield_gc_r(p0, descr=<FieldP list.items 16>)
++5278: setarrayitem_gc(p395, i354, i389, descr=<ArrayS 8>)
+debug_merge_point(0, 0, '(jitdriver: no get_printable_location)')
++5283: i398 = call_i(ConstClass(ll_int__rpy_unicodePtr_Signed), p150, 10, descr=<Calli 8 ri EF=4>)
++5305: setfield_gc(p0, i366, descr=<FieldS list.length 8>)
++5309: guard_no_exception(descr=<Guard0x7ed1b0afb778>) [i398, p0, p1]
++5329: i400 = int_add(i280, 4)
++5333: i401 = arraylen_gc(p395, descr=<ArrayS 8>)
++5337: i402 = int_lt(i401, i400)
++5340: cond_call(i402, ConstClass(_ll_list_resize_hint_really_look_inside_iff__listPtr_Signed_Bool), p0, i400, 1, descr=<Callv 0 rii EF=5>)
++5346: guard_no_exception(descr=<Guard0x7ed1b0afb7c0>) [i398, i366, p0, p1, i400]
++5346: p405 = getfield_gc_r(p0, descr=<FieldP list.items 16>)
++5350: setarrayitem_gc(p405, i366, i398, descr=<ArrayS 8>)
+debug_merge_point(0, 0, '(jitdriver: no get_printable_location)')
++5355: i406 = getarrayitem_gc_i(p405, i354, descr=<ArrayS 8>)
++5360: i409 = call_i(ConstClass(_ll_2_str_eq_checknull_char__rpy_unicodePtr_UniChar), p169, 60, descr=<Calli 8 ri EF=0 OS=50>)
++5398: setfield_gc(p0, i400, descr=<FieldS list.length 8>)
++5402: guard_false(i409, descr=<Guard0x7ed1b0afb808>) [i409, i406, i398, p0, p1, p169]
++5411: i412 = call_i(ConstClass(_ll_2_str_eq_checknull_char__rpy_unicodePtr_UniChar), p169, 43, descr=<Calli 8 ri EF=0 OS=50>)
++5436: guard_true(i412, descr=<Guard0x7ed1b0afb850>) [i412, i406, i398, p0, p1]
++5445: i413 = int_add(i406, i398)
++5448: i415 = int_add(i280, 5)
++5452: i416 = arraylen_gc(p405, descr=<ArrayS 8>)
++5463: i417 = int_lt(i416, i415)
++5466: cond_call(i417, ConstClass(_ll_list_resize_hint_really_look_inside_iff__listPtr_Signed_Bool), p0, i415, 1, descr=<Callv 0 rii EF=5>)
++5472: guard_no_exception(descr=<Guard0x7ed1b0afb898>) [i413, i400, p0, p1, i415]
++5472: p420 = getfield_gc_r(p0, descr=<FieldP list.items 16>)
++5476: setarrayitem_gc(p420, i400, i413, descr=<ArrayS 8>)
+debug_merge_point(0, 0, '(jitdriver: no get_printable_location)')
++5481: i422 = int_add(i280, 6)
++5485: i423 = arraylen_gc(p420, descr=<ArrayS 8>)
++5489: setfield_gc(p0, i415, descr=<FieldS list.length 8>)
++5493: i424 = int_lt(i423, i422)
++5496: cond_call(i424, ConstClass(_ll_list_resize_hint_really_look_inside_iff__listPtr_Signed_Bool), p0, i422, 1, descr=<Callv 0 rii EF=5>)
++5502: guard_no_exception(descr=<Guard0x7ed1b0afb8e0>) [i413, i415, p0, p1, i422]
++5502: p427 = getfield_gc_r(p0, descr=<FieldP list.items 16>)
++5506: setarrayitem_gc(p427, i415, i413, descr=<ArrayS 8>)
+debug_merge_point(0, 0, '(jitdriver: no get_printable_location)')
++5511: i428 = unicodehash(p227)
++5522: i430 = cond_call_value_i(i428, ConstClass(_ll_strhash__rpy_unicodePtr), p227, descr=<Calli 8 r EF=2>)
++5531: i433 = call_i(ConstClass(ll_call_lookup_function_trampoline__v66___simple_call__function_ll), p1, p227, i430, 1, descr=<Calli 8 rrii EF=5 OS=4>)
++5629: setfield_gc(p0, i422, descr=<FieldS list.length 8>)
++5647: guard_no_exception(descr=<Guard0x7ed1b0afb928>) [i433, i430, i413, p0, p1, p227]
++5661: call_n(ConstClass(_ll_dict_setitem_lookup_done_trampoline__v84___simple_call__function__l), p1, p227, i413, i430, i433, descr=<Callv 0 rriii EF=5>)
++5750: guard_no_exception(descr=<Guard0x7ed1b0afb970>) [p0, p1]
++5764: i435 = arraylen_gc(p427, descr=<ArrayS 8>)
++5775: i437 = int_rshift(i435, 1)
++5778: i439 = int_sub(i437, 5)
++5782: i440 = int_lt(i415, i439)
++5785: cond_call(i440, ConstClass(_ll_list_resize_hint_really_look_inside_iff__listPtr_Signed_Bool), p0, i415, 0, descr=<Callv 0 rii EF=5>)
++5791: guard_no_exception(descr=<Guard0x7ed1b0afb9b8>) [p0, p1, i415]
+debug_merge_point(0, 0, '(jitdriver: no get_printable_location)')
++5791: i444 = int_sub(i280, -4)
++5795: p445 = getfield_gc_r(p0, descr=<FieldP list.items 16>)
++5806: i446 = getarrayitem_gc_i(p445, i444, descr=<ArrayS 8>)
++5806: i447 = arraylen_gc(p445, descr=<ArrayS 8>)
++5810: i449 = int_rshift(i447, 1)
++5813: i451 = int_sub(i449, 5)
++5817: setfield_gc(p0, i415, descr=<FieldS list.length 8>)
++5821: i452 = int_lt(i444, i451)
++5824: cond_call(i452, ConstClass(_ll_list_resize_hint_really_look_inside_iff__listPtr_Signed_Bool), p0, i444, 0, descr=<Callv 0 rii EF=5>)
++5830: guard_no_exception(descr=<Guard0x7ed1b0afba00>) [p0, p1, i444]
+debug_merge_point(0, 0, '(jitdriver: no get_printable_location)')
++5830: i457 = call_i(ConstClass(ll_int__rpy_unicodePtr_Signed), p296, 10, descr=<Calli 8 ri EF=4>)
++5852: setfield_gc(p0, i444, descr=<FieldS list.length 8>)
++5856: guard_no_exception(descr=<Guard0x7ed1b0afba48>) [i457, p0, p1]
++5876: i459 = int_sub(14, i457)
++5876: i461 = int_sub(15, i457)
++5885: guard_value(i461, 4, descr=<Guard0x7ed1b0afc200>) [i457, p0, p1]
+debug_merge_point(0, 0, '(jitdriver: no get_printable_location)')
++5895: jump(p0, p1, p8, p9, p10, i444, p39, p40, p41, p58, p59, p60, p86, p87, p88, p121, p122, p123, p148, p149, p150, p167, p168, p169, p197, p198, p225, p226, p227, p258, p259, p294, p295, p296, descr=TargetToken(139439077474848))
++5904: --end of the loop--
+[3e59e8bad379] jit-log-opt-loop}
+[3e5aaa86f533] {jit-summary
+Tracing:      	1	0.002426
+Backend:      	1	0.001555
+TOTAL:      		1.213573
+ops:             	264
+heapcached ops:  	34
+recorded ops:    	243
+  calls:         	66
+guards:          	93
+opt ops:         	416
+opt guards:      	105
+opt guards shared:	11
+forcings:        	0
+abort: trace too long:	0
+abort: compiling:	0
+abort: vable escape:	0
+abort: bad loop: 	0
+abort: force quasi-immut:	0
+abort: segmenting trace:	0
+virtualizables forced:	0
+nvirtuals:       	0
+nvholes:         	0
+nvreused:        	0
+vecopt tried:    	0
+vecopt success:  	0
+Total # of loops:	1
+Total # of bridges:	0
+Freed # of loops:	0
+Freed # of bridges:	0
+[3e5aaa87815f] jit-summary}
