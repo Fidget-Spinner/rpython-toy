@@ -9,7 +9,12 @@ sys.path.insert(0, "/home/ken/Documents/GitHub/pypy")
 
 from rpython.rlib.jit import JitDriver, hint, elidable
 
-jitdriver = JitDriver(greens=['pc', 'self'], reds=['stack', 'namespace']) 
+def get_location(pc, self):
+    return "%d_%s_%s" % (
+            pc, self.insn_stream[pc][0].encode("ascii"), self.insn_stream[pc][1].encode("ascii")
+            )
+
+jitdriver = JitDriver(greens=['pc', 'self'], reds=['stack', 'namespace'], get_printable_location=get_location) 
 class Interpreter:
     def __init__(self, stream):
         self.insn_stream = stream
