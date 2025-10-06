@@ -28,12 +28,16 @@ class CompilerVisitor(ParserVisitor.ParserVisitor):
         res.append(Insn(Opcode.STORE_NAME, f"{ctx.ID()}"))
         return res
 
-    def visitWhil(self, ctx: Parser.WhilContext) -> list[Insn]:
-        res = self.visitExpr(ctx.expr())
-        len_expr = len(res)
+    def visitBlock(self, ctx: Parser.BlockContext) -> list[Insn]:
         body = []
         for stat in ctx.stat():
             body.extend(self.visitStat(stat))
+        return body
+
+    def visitWhil(self, ctx: Parser.WhilContext) -> list[Insn]:
+        res = self.visitExpr(ctx.expr())
+        len_expr = len(res)
+        body = self.visitBlock(ctx.block())
         # +1 for the JUMP_BACKWARD
         res.append(Insn(Opcode.POP_JUMP_IF_FALSE, len(body) + 1))
         res.extend(body)
@@ -43,7 +47,14 @@ class CompilerVisitor(ParserVisitor.ParserVisitor):
         return res
 
     def visitIf_els(self, ctx: Parser.If_elsContext) -> list[Insn]:
-        return self.visitChildren(ctx)
+        cond = self.visitExpr(ctx.expr())
+        if_block = self.visitBlock(ctx.block(0))
+        else_block = self.visitBlock(ctx.block(1))
+        # Jump over the else block
+        if_block.append(Insn(Opcode.JUMP_FORWARD, len(else_block)))
+        # Jump to the else block
+        cond.append(Insn(Opcode.POP_JUMP_IF_FALSE, len(if_block)))
+        return cond + if_block + else_block + [Insn(Opcode.PUSH_NULL, 0)]
 
     def visitFunc_def(self, ctx: Parser.Func_defContext) -> list[Insn]:
         return self.visitChildren(ctx)

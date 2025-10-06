@@ -24,6 +24,11 @@ class ParserVisitor(ParseTreeVisitor):
         return self.visitChildren(ctx)
 
 
+    # Visit a parse tree produced by Parser#block.
+    def visitBlock(self, ctx:Parser.BlockContext):
+        return self.visitChildren(ctx)
+
+
     # Visit a parse tree produced by Parser#whil.
     def visitWhil(self, ctx:Parser.WhilContext):
         return self.visitChildren(ctx)

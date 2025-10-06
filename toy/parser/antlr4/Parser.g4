@@ -17,8 +17,9 @@ stat: assgn
     ;
 
 assgn: ID '=' expr ';';
-whil: WHILE '(' expr ')' '{' stat* '}';
-if_els: IF '(' expr ')' '{' stat* '}' ELSE '{' stat* '}';
+block: '{' stat* '}';
+whil: WHILE '(' expr ')' block;
+if_els: IF '(' expr ')' block ELSE block;
 
 func_def : DEF ID '(' ID (',' ID)* ')' '{' stat* '}' ;
 

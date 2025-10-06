@@ -44,8 +44,12 @@ class Interpreter:
                     num = 1 if lhs < rhs else 0
                 elif op == u'+':
                     num = lhs + rhs
+                elif op == u'-':
+                    num = lhs - rhs                    
+                elif op == u"%":
+                    num = lhs % rhs
                 else:
-                    raise NotImplementedError("Unknown binop")
+                    raise NotImplementedError("Unknown binop %s" % op)
                 stack.append(num)
             elif opcode == Opcode.STORE_NAME:
                 namespace[oparg] = stack[-1]
@@ -62,6 +66,8 @@ class Interpreter:
                 stack.append(0)
             elif opcode == Opcode.JUMP_BACKWARD:
                 pc -= int(oparg)
+            elif opcode == Opcode.JUMP_FORWARD:
+                pc += int(oparg)  
             else:
                 raise NotImplementedError("Unknown opcode ")
             pc += 1
