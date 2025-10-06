@@ -49,7 +49,7 @@ class Interpreter:
                 elif op == u"%":
                     num = lhs % rhs
                 else:
-                    raise NotImplementedError("Unknown binop %s" % op)
+                    raise NotImplementedError(u"Unknown binop %s" % op)
                 stack.append(num)
             elif opcode == Opcode.STORE_NAME:
                 namespace[oparg] = stack[-1]
