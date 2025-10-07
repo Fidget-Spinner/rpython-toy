@@ -1,0 +1,212 @@
+digraph ideal {
+
+    rankdir = "LR"
+
+executor_0x5b64fa9c0dd0 [
+    shape = none
+    label = <<table border="0" cellspacing="0">
+        <tr><td port="start" border="1" ><b>Executor</b></td></tr>
+        <tr><td border="1" >No code object</td></tr>
+        <tr><td port="i0" border="1" >_START_EXECUTOR</td></tr>
+        <tr><td port="i1" border="1" >_MAKE_WARM</td></tr>
+        <tr><td port="i2" border="1" >_SET_IP</td></tr>
+        <tr><td port="i3" border="1" >_LOAD_NAME</td></tr>
+        <tr><td port="i4" border="1" >_CHECK_VALIDITY</td></tr>
+        <tr><td port="i5" border="1" >_LOAD_CONST_INLINE_BORROW</td></tr>
+        <tr><td port="i6" border="1" >_GUARD_NOS_INT</td></tr>
+        <tr><td port="i7" border="1" >_BINARY_OP_SUBTRACT_INT</td></tr>
+        <tr><td port="i8" border="1" >_SET_IP</td></tr>
+        <tr><td port="i9" border="1" >_STORE_NAME</td></tr>
+        <tr><td port="i10" border="1" >_CHECK_VALIDITY</td></tr>
+        <tr><td port="i11" border="1" >_SET_IP</td></tr>
+        <tr><td port="i12" border="1" >_LOAD_NAME</td></tr>
+        <tr><td port="i13" border="1" >_CHECK_VALIDITY</td></tr>
+        <tr><td port="i14" border="1" >_LOAD_CONST_INLINE_BORROW</td></tr>
+        <tr><td port="i15" border="1" >_GUARD_NOS_INT</td></tr>
+        <tr><td port="i16" border="1" >_BINARY_OP_ADD_INT</td></tr>
+        <tr><td port="i17" border="1" >_SET_IP</td></tr>
+        <tr><td port="i18" border="1" >_STORE_NAME</td></tr>
+        <tr><td port="i19" border="1" >_CHECK_VALIDITY</td></tr>
+        <tr><td port="i20" border="1" >_SET_IP</td></tr>
+        <tr><td port="i21" border="1" >_LOAD_NAME</td></tr>
+        <tr><td port="i22" border="1" >_CHECK_VALIDITY</td></tr>
+        <tr><td port="i23" border="1" >_LOAD_CONST_INLINE_BORROW</td></tr>
+        <tr><td port="i24" border="1" >_GUARD_NOS_INT</td></tr>
+        <tr><td port="i25" border="1" >_BINARY_OP_ADD_INT</td></tr>
+        <tr><td port="i26" border="1" >_SET_IP</td></tr>
+        <tr><td port="i27" border="1" >_STORE_NAME</td></tr>
+        <tr><td port="i28" border="1" >_CHECK_VALIDITY</td></tr>
+        <tr><td port="i29" border="1" >_SET_IP</td></tr>
+        <tr><td port="i30" border="1" >_LOAD_NAME</td></tr>
+        <tr><td port="i31" border="1" >_CHECK_VALIDITY</td></tr>
+        <tr><td port="i32" border="1" >_LOAD_CONST_INLINE_BORROW</td></tr>
+        <tr><td port="i33" border="1" >_GUARD_NOS_INT</td></tr>
+        <tr><td port="i34" border="1" >_BINARY_OP_ADD_INT</td></tr>
+        <tr><td port="i35" border="1" >_SET_IP</td></tr>
+        <tr><td port="i36" border="1" >_STORE_NAME</td></tr>
+        <tr><td port="i37" border="1" >_EXIT_TRACE</td></tr>
+    </table>>
+]
+
+executor_0x5b64fa9c0dd0:i6 -> executor_0x76633590eb10:start
+executor_0x5b64fa9c0dd0:i7 -> executor_0x76633590eb10:start
+executor_0x5b64fa9c0dd0:i15 -> executor_0x76633590eb10:start
+executor_0x5b64fa9c0dd0:i16 -> executor_0x76633590eb10:start
+executor_0x5b64fa9c0dd0:i24 -> executor_0x76633590eb10:start
+executor_0x5b64fa9c0dd0:i25 -> executor_0x76633590eb10:start
+executor_0x5b64fa9c0dd0:i33 -> executor_0x76633590eb10:start
+executor_0x5b64fa9c0dd0:i34 -> executor_0x76633590eb10:start
+executor_0x5b64fa9c0dd0:i37 -> executor_0x5b64fa9c4260:start
+executor_0x5b64fa9c0840 [
+    shape = none
+    label = <<table border="0" cellspacing="0">
+        <tr><td port="start" border="1" ><b>Executor</b></td></tr>
+        <tr><td border="1" >No code object</td></tr>
+        <tr><td port="i0" border="1" >_START_EXECUTOR</td></tr>
+        <tr><td port="i1" border="1" >_MAKE_WARM</td></tr>
+        <tr><td port="i2" border="1" >_SET_IP</td></tr>
+        <tr><td port="i3" border="1" >_LOAD_NAME</td></tr>
+        <tr><td port="i4" border="1" >_CHECK_VALIDITY</td></tr>
+        <tr><td port="i5" border="1" >_LOAD_CONST_INLINE_BORROW</td></tr>
+        <tr><td port="i6" border="1" >_SET_IP</td></tr>
+        <tr><td port="i7" border="1" >_BINARY_OP</td></tr>
+        <tr><td port="i8" border="1" >_CHECK_VALIDITY</td></tr>
+        <tr><td port="i9" border="1" >_SET_IP</td></tr>
+        <tr><td port="i10" border="1" >_TO_BOOL_INT</td></tr>
+        <tr><td port="i11" border="1" >_CHECK_VALIDITY</td></tr>
+        <tr><td port="i12" border="1" >_GUARD_IS_TRUE_POP</td></tr>
+        <tr><td port="i13" border="1" >_SET_IP</td></tr>
+        <tr><td port="i14" border="1" >_LOAD_NAME</td></tr>
+        <tr><td port="i15" border="1" >_CHECK_VALIDITY</td></tr>
+        <tr><td port="i16" border="1" >_LOAD_CONST_INLINE_BORROW</td></tr>
+        <tr><td port="i17" border="1" >_GUARD_NOS_INT</td></tr>
+        <tr><td port="i18" border="1" >_BINARY_OP_ADD_INT</td></tr>
+        <tr><td port="i19" border="1" >_SET_IP</td></tr>
+        <tr><td port="i20" border="1" >_STORE_NAME</td></tr>
+        <tr><td port="i21" border="1" >_CHECK_VALIDITY</td></tr>
+        <tr><td port="i22" border="1" >_SET_IP</td></tr>
+        <tr><td port="i23" border="1" >_LOAD_NAME</td></tr>
+        <tr><td port="i24" border="1" >_CHECK_VALIDITY</td></tr>
+        <tr><td port="i25" border="1" >_LOAD_CONST_INLINE_BORROW</td></tr>
+        <tr><td port="i26" border="1" >_GUARD_NOS_INT</td></tr>
+        <tr><td port="i27" border="1" >_BINARY_OP_ADD_INT</td></tr>
+        <tr><td port="i28" border="1" >_SET_IP</td></tr>
+        <tr><td port="i29" border="1" >_STORE_NAME</td></tr>
+        <tr><td port="i30" border="1" >_EXIT_TRACE</td></tr>
+    </table>>
+]
+
+executor_0x5b64fa9c0840:i10 -> executor_0x76633590eb10:start
+executor_0x5b64fa9c0840:i12 -> executor_0x5b64fa9c0dd0:start
+executor_0x5b64fa9c0840:i17 -> executor_0x76633590eb10:start
+executor_0x5b64fa9c0840:i18 -> executor_0x76633590eb10:start
+executor_0x5b64fa9c0840:i26 -> executor_0x76633590eb10:start
+executor_0x5b64fa9c0840:i27 -> executor_0x76633590eb10:start
+executor_0x5b64fa9c0840:i30 -> executor_0x76633590eb10:start
+executor_0x5b64fa917090 [
+    shape = none
+    label = <<table border="0" cellspacing="0">
+        <tr><td port="start" border="1" ><b>Executor</b></td></tr>
+        <tr><td border="1" >No code object</td></tr>
+        <tr><td port="i0" border="1" >_START_EXECUTOR</td></tr>
+        <tr><td port="i1" border="1" >_MAKE_WARM</td></tr>
+        <tr><td port="i2" border="1" >_GUARD_IS_TRUE_POP</td></tr>
+        <tr><td port="i3" border="1" >_SET_IP</td></tr>
+        <tr><td port="i4" border="1" >_LOAD_NAME</td></tr>
+        <tr><td port="i5" border="1" >_CHECK_VALIDITY</td></tr>
+        <tr><td port="i6" border="1" >_LOAD_CONST_INLINE_BORROW</td></tr>
+        <tr><td port="i7" border="1" >_GUARD_NOS_INT</td></tr>
+        <tr><td port="i8" border="1" >_BINARY_OP_ADD_INT</td></tr>
+        <tr><td port="i9" border="1" >_SET_IP</td></tr>
+        <tr><td port="i10" border="1" >_STORE_NAME</td></tr>
+        <tr><td port="i11" border="1" >_CHECK_VALIDITY</td></tr>
+        <tr><td port="i12" border="1" >_SET_IP</td></tr>
+        <tr><td port="i13" border="1" >_LOAD_NAME</td></tr>
+        <tr><td port="i14" border="1" >_CHECK_VALIDITY</td></tr>
+        <tr><td port="i15" border="1" >_LOAD_CONST_INLINE_BORROW</td></tr>
+        <tr><td port="i16" border="1" >_GUARD_NOS_INT</td></tr>
+        <tr><td port="i17" border="1" >_BINARY_OP_ADD_INT</td></tr>
+        <tr><td port="i18" border="1" >_SET_IP</td></tr>
+        <tr><td port="i19" border="1" >_STORE_NAME</td></tr>
+        <tr><td port="i20" border="1" >_EXIT_TRACE</td></tr>
+    </table>>
+]
+
+executor_0x5b64fa917090:i2 -> executor_0x76633590eb10:start
+executor_0x5b64fa917090:i7 -> executor_0x76633590eb10:start
+executor_0x5b64fa917090:i8 -> executor_0x76633590eb10:start
+executor_0x5b64fa917090:i16 -> executor_0x76633590eb10:start
+executor_0x5b64fa917090:i17 -> executor_0x76633590eb10:start
+executor_0x5b64fa917090:i20 -> executor_0x5b64fa9c4260:start
+executor_0x5b64fa9c4260 [
+    shape = none
+    label = <<table border="0" cellspacing="0">
+        <tr><td port="start" border="1" ><b>Executor</b></td></tr>
+        <tr><td  border="1" ><module>: 13</td></tr>
+        <tr><td port="i0" border="1" >_START_EXECUTOR</td></tr>
+        <tr><td port="i1" border="1" >_MAKE_WARM</td></tr>
+        <tr><td port="i2" border="1" >_SET_IP</td></tr>
+        <tr><td port="i3" border="1" >_CHECK_PERIODIC</td></tr>
+        <tr><td port="i4" border="1" >_CHECK_VALIDITY</td></tr>
+        <tr><td port="i5" border="1" >_SET_IP</td></tr>
+        <tr><td port="i6" border="1" >_LOAD_NAME</td></tr>
+        <tr><td port="i7" border="1" >_CHECK_VALIDITY</td></tr>
+        <tr><td port="i8" border="1" >_LOAD_CONST_INLINE_BORROW</td></tr>
+        <tr><td port="i9" border="1" >_GUARD_NOS_INT</td></tr>
+        <tr><td port="i10" border="1" >_COMPARE_OP_INT</td></tr>
+        <tr><td port="i11" border="1" >_GUARD_IS_TRUE_POP</td></tr>
+        <tr><td port="i12" border="1" >_SET_IP</td></tr>
+        <tr><td port="i13" border="1" >_LOAD_NAME</td></tr>
+        <tr><td port="i14" border="1" >_CHECK_VALIDITY</td></tr>
+        <tr><td port="i15" border="1" >_LOAD_CONST_INLINE_BORROW</td></tr>
+        <tr><td port="i16" border="1" >_SET_IP</td></tr>
+        <tr><td port="i17" border="1" >_BINARY_OP</td></tr>
+        <tr><td port="i18" border="1" >_CHECK_VALIDITY</td></tr>
+        <tr><td port="i19" border="1" >_SET_IP</td></tr>
+        <tr><td port="i20" border="1" >_TO_BOOL_INT</td></tr>
+        <tr><td port="i21" border="1" >_CHECK_VALIDITY</td></tr>
+        <tr><td port="i22" border="1" >_GUARD_IS_TRUE_POP</td></tr>
+        <tr><td port="i23" border="1" >_SET_IP</td></tr>
+        <tr><td port="i24" border="1" >_LOAD_NAME</td></tr>
+        <tr><td port="i25" border="1" >_CHECK_VALIDITY</td></tr>
+        <tr><td port="i26" border="1" >_LOAD_CONST_INLINE_BORROW</td></tr>
+        <tr><td port="i27" border="1" >_GUARD_NOS_INT</td></tr>
+        <tr><td port="i28" border="1" >_BINARY_OP_ADD_INT</td></tr>
+        <tr><td port="i29" border="1" >_SET_IP</td></tr>
+        <tr><td port="i30" border="1" >_STORE_NAME</td></tr>
+        <tr><td port="i31" border="1" >_CHECK_VALIDITY</td></tr>
+        <tr><td port="i32" border="1" >_SET_IP</td></tr>
+        <tr><td port="i33" border="1" >_LOAD_NAME</td></tr>
+        <tr><td port="i34" border="1" >_CHECK_VALIDITY</td></tr>
+        <tr><td port="i35" border="1" >_LOAD_CONST_INLINE_BORROW</td></tr>
+        <tr><td port="i36" border="1" >_GUARD_NOS_INT</td></tr>
+        <tr><td port="i37" border="1" >_BINARY_OP_SUBTRACT_INT</td></tr>
+        <tr><td port="i38" border="1" >_SET_IP</td></tr>
+        <tr><td port="i39" border="1" >_STORE_NAME</td></tr>
+        <tr><td port="i40" border="1" >_CHECK_VALIDITY</td></tr>
+        <tr><td port="i41" border="1" >_SET_IP</td></tr>
+        <tr><td port="i42" border="1" >_LOAD_NAME</td></tr>
+        <tr><td port="i43" border="1" >_CHECK_VALIDITY</td></tr>
+        <tr><td port="i44" border="1" >_LOAD_CONST_INLINE_BORROW</td></tr>
+        <tr><td port="i45" border="1" >_SET_IP</td></tr>
+        <tr><td port="i46" border="1" >_BINARY_OP</td></tr>
+        <tr><td port="i47" border="1" >_CHECK_VALIDITY</td></tr>
+        <tr><td port="i48" border="1" >_SET_IP</td></tr>
+        <tr><td port="i49" border="1" >_TO_BOOL_INT</td></tr>
+        <tr><td port="i50" border="1" >_CHECK_VALIDITY</td></tr>
+        <tr><td port="i51" border="1" >_EXIT_TRACE</td></tr>
+    </table>>
+]
+
+executor_0x5b64fa9c4260:i9 -> executor_0x76633590eb10:start
+executor_0x5b64fa9c4260:i11 -> executor_0x76633590eb10:start
+executor_0x5b64fa9c4260:i20 -> executor_0x76633590eb10:start
+executor_0x5b64fa9c4260:i22 -> executor_0x5b64fa9c0840:start
+executor_0x5b64fa9c4260:i27 -> executor_0x76633590eb10:start
+executor_0x5b64fa9c4260:i28 -> executor_0x76633590eb10:start
+executor_0x5b64fa9c4260:i36 -> executor_0x76633590eb10:start
+executor_0x5b64fa9c4260:i37 -> executor_0x76633590eb10:start
+executor_0x5b64fa9c4260:i49 -> executor_0x76633590eb10:start
+executor_0x5b64fa9c4260:i51 -> executor_0x5b64fa917090:start
+}
+

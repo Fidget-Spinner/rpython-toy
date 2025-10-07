@@ -9,41 +9,41 @@ sys.path.insert(0, "/home/ken/Documents/GitHub/pypy")
 
 from rpython.rlib.jit import JitDriver, hint, elidable
 
-def get_location(pc, self):
+def get_location(pc, insn_stream):
     return "%d_%s_%s" % (
-            pc, self.insn_stream[pc][0].encode("ascii"), self.insn_stream[pc][1].encode("ascii")
-            )
-
-jitdriver = JitDriver(greens=['pc', 'self'], reds=['stack', 'namespace'], get_printable_location=get_location) 
+            pc, insn_stream[pc][0].encode("ascii"), insn_stream[pc][1].encode("ascii")
+    )
+jitdriver = JitDriver(greens=['pc', 'insn_stream'], reds=['stack', 'namespace'], get_printable_location=get_location) 
 class Interpreter:
-    def __init__(self, stream):
-        self.insn_stream = stream
+    def __init__(self):
+        pass
     
     @staticmethod
     @elidable
     def get_insn(insn_stream, pc):
         return insn_stream[pc]
 
-    def run(self):
+    @staticmethod
+    def run(insn_stream):
         pc = 0
         stack = []
         namespace = {}
-        self = hint(self, promote=True)
         while True:
-            jitdriver.jit_merge_point(self=self, pc=pc, stack=stack, namespace=namespace)           
-            if pc >= len(self.insn_stream):
+            jitdriver.jit_merge_point(pc=pc, insn_stream=insn_stream, stack=stack, namespace=namespace)           
+            if pc >= len(insn_stream):
                 break
-            insn = Interpreter.get_insn(self.insn_stream, pc)
+            insn = Interpreter.get_insn(insn_stream, pc)
             opcode = insn[0]
             oparg = insn[1]
+            # print(pc, opcode, len(stack))
             if opcode == Opcode.LOAD_CONST:
                 oparg = hint(oparg, promote=True)
                 stack.append(int(oparg))
             elif opcode == Opcode.LOAD_NAME:
                 stack.append(namespace[oparg])
             elif opcode == Opcode.BINARY_OP:
-                lhs = stack[-2]
-                rhs = stack[-1]
+                rhs = stack.pop()
+                lhs = stack.pop()
                 op = oparg
                 if op == u'<':
                     num = 1 if lhs < rhs else 0
@@ -76,6 +76,8 @@ class Interpreter:
             else:
                 raise NotImplementedError("Unknown opcode ")
             pc += 1
+            if opcode == Opcode.JUMP_BACKWARD:
+                jitdriver.can_enter_jit(pc=pc, insn_stream=insn_stream, stack=stack, namespace=namespace)
         # print(namespace)
 
 def jitpolicy(driver):
@@ -95,7 +97,7 @@ def run(argv):
             prev = i + 1
             opcode, oparg, _ = line.split(",")
             res.append((opcode.decode("utf-8"), oparg.decode("utf-8")))
-    Interpreter(res).run()
+    Interpreter().run(res)
     os.close(fp)
     return 0
 
