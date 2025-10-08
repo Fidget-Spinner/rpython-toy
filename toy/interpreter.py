@@ -29,7 +29,6 @@ class NameSpace:
 
     def lookup_offset(self, name, inline_cache):
         version = inline_cache[0]
-        version = hint(version, promote=True)
         if version == self.version:
             return inline_cache[1]
         if name not in self.ivar_map:
@@ -42,7 +41,6 @@ class NameSpace:
 
     def lookup_var(self, name, inline_cache):
         version = inline_cache[0]
-        version = hint(version, promote=True)
         if version == self.version:
             return self.cache_hit(inline_cache)
         inline_cache[0] = self.version
